@@ -26,7 +26,7 @@ pipeline {
       steps {
          withSonarQubeEnv('sonarserver') {
     // some block
-           sh '''cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && $SCANNER_HOME/sonar-scanner -Dsonar.projectName=abishek \
+           sh '''cd java-maven-sonar-argocd-helm-k8s/spring-boot-app &&  mvn sonar:sonar -Dsonar.projectName=abishek \
                -Dsonar.java.binaries=. \
                -Dsonar.projectKey=abishek '''
           }
